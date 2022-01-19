@@ -1,0 +1,42 @@
+.btn-wrapper {
+    align-items: center;
+    display: flex;
+    height: 125px;
+    justify-content: space-evenly;
+}
+
+button {
+    color: white;
+    padding: 0 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.all-btn {
+    background-color: purple;
+}
+
+.red-btn {
+    background-color: red;
+}
+
+.yellow-btn {
+    background-color: yellow;
+}
+
+.yellow-btn p {
+    color: #444444;
+}
+
+.green-btn {
+    background-color: green;
+}
+
+.number {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.title {
+    text-transform: uppercase;
+}
