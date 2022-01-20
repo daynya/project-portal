@@ -1,16 +1,29 @@
+.table {
+    border: 1px solid #444444;
+    margin: 0 20px 20px 20px;
+    padding: 20px;
+}
+
 table {
-    margin: 20px 0;
-    padding: 0 20px;
+    border-collapse: collapse;
     width: 100%;
 }
 
 h3 {
-    margin: 0 0 20px 0;
+    color: indigo;
+    margin-top: 0;
     text-transform: uppercase;
     width: 100%;
 }
 
 tr {
-    border-top: 1px solid #444444;
+    height: 40px;
 }
 
+.heading-row {
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}

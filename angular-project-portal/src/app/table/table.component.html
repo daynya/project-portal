@@ -1,15 +1,23 @@
 <div class="table">
     <table>
         <h3>All Projects</h3>
-        <tr>
-            <td>Name</td>
-            <td>Overall</td>
-            <td>Budget</td>
-            <td>Resource</td>
-            <td>Schedule</td>
-            <td>Project Manager</td>
-            <td>Modified</td>
-            <td>Edit</td>
+        <tr class="heading-row">
+            <th>Name</th>
+            <th>Status</th>
+            <th>Project Manager</th>
+            <th>Percentage Complete</th>
+            <th>Modified</th>
+            <th>Edit</th>
+        </tr>
+        <tr *ngFor="let project of projects">
+            <td>{{project.projectName}}</td>
+            <td>{{project.overallStatus}}</td>
+            <td>{{project.projectManager}}</td>
+            <td>{{project.percentageComplete}}</td>
+            <td>{{project.modifiedDate}}</td>
+            <td>
+                <button>Edit</button>
+            </td>
         </tr>
     </table>
 </div>

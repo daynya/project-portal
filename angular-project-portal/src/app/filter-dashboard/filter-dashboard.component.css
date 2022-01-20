@@ -1,7 +1,7 @@
 .btn-wrapper {
     align-items: center;
     display: flex;
-    height: 125px;
+    height: 150px;
     justify-content: space-evenly;
 }
 
@@ -13,7 +13,7 @@ button {
 }
 
 .all-btn {
-    background-color: purple;
+    background-color: indigo;
 }
 
 .red-btn {
