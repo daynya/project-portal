@@ -6,3 +6,7 @@ export interface Project {
     percentageComplete: number;
     modifiedDate: string;
 }
+
+export interface ProjectWrapper {
+    projects: Project[];
+}
