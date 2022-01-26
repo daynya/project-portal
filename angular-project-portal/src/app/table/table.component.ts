@@ -26,6 +26,14 @@ export class TableComponent implements OnInit {
     this.projectService.getProjects()
       .subscribe(projects => this.projects = projects);
   }
+  
+  filter(overallStatus:any) {
+    this.projects = this.projects.filter(projects => projects.overallStatus === overallStatus );
+  };
+  
+  clearFilter(overallStatus:any) {
+    this.projects.filter(overallStatus);
+  }
 
   constructor(private projectService: ProjectService) { }
 

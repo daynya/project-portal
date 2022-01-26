@@ -28,16 +28,11 @@ export class ProjectService {
 
     return this.http.get<ProjectWrapper>(this.projectsUrl)
       .pipe(
-          tap(data =>
-            console.log('All: ' + JSON.stringify(data))),
           map(projectWrapper => projectWrapper.projects),
-        //tap(_ => this.log('fetched projects')),
         catchError(this.handleError<Project[]>('getProjects', []))
       );
       
   }
-
-
   
   constructor(private http: HttpClient) { }
 }

@@ -1,3 +1,49 @@
+/* filters */
+.btn-wrapper {
+    align-items: center;
+    display: flex;
+    height: 150px;
+    justify-content: space-evenly;
+}
+
+button {
+    color: white;
+    padding: 0 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.all-btn {
+    background-color: indigo;
+}
+
+.red-btn {
+    background-color: red;
+}
+
+.yellow-btn {
+    background-color: yellow;
+}
+
+.yellow-btn p {
+    color: #444444;
+}
+
+.green-btn {
+    background-color: green;
+}
+
+.number {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+
+/* table */
 .table {
     border: 1px solid #444444;
     margin: 0 20px 20px 20px;
