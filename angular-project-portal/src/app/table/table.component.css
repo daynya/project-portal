@@ -73,3 +73,7 @@ tr {
 tr:nth-child(odd) {
     background-color: #dddddd;
 }
+
+.table button {
+    color: black;
+}

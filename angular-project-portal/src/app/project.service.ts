@@ -9,8 +9,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 
-//class ProjectWrapper { projects: Project[] = []; }
-
 export class ProjectService {
 
   private handleError<T>(operation = 'operation', result?: T) {

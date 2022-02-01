@@ -12,6 +12,7 @@ import { ProjectService } from '../project.service';
 export class TableComponent implements OnInit {
 
   projects: Project[] = [];
+  displayProjects: Project[] = [];
 
   project: Project = {
     id: 1,
@@ -24,16 +25,17 @@ export class TableComponent implements OnInit {
 
   getProjects(): void {
     this.projectService.getProjects()
-      .subscribe(projects => this.projects = projects);
+      .subscribe(projects => {
+        this.projects = projects;
+        this.displayProjects = projects;
+      });
   }
   
   filter(overallStatus:any) {
-    this.projects = this.projects.filter(projects => projects.overallStatus === overallStatus );
+    this.displayProjects = this.projects.filter(projects => projects.overallStatus === overallStatus );
+    console.log(overallStatus);
+    console.log(this.projects);
   };
-  
-  clearFilter(overallStatus:any) {
-    this.projects.filter(overallStatus);
-  }
 
   constructor(private projectService: ProjectService) { }
 
