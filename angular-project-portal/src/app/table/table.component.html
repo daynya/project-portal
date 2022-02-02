@@ -1,29 +1,29 @@
 <div class="btn-wrapper">
     <button 
         class="all-btn" 
-        (click)="filter('All')">
-        <p class="number">107</p>
+        (click)="showAll()">
+        <p class="number">{{projectCount}}</p>
         <p class="title">All Projects</p>
     </button>
 
     <button 
         class="red-btn" 
         (click)="filter('R')">
-        <p class="number">18</p>
+        <p class="number">{{getCount('R')}}</p>
         <p class="title">Red Projects</p>
     </button>
 
     <button 
         class="yellow-btn" 
         (click)="filter('Y')">
-        <p class="number">48</p>
+        <p class="number">{{getCount('Y')}}</p>
         <p class="title">Yellow Projects</p>
     </button>
 
     <button 
         class="green-btn"
         (click)="filter('G')">
-        <p class="number">41</p>
+        <p class="number">{{getCount('G')}}</p>
         <p class="title">Green Projects</p>
     </button>
 </div>

@@ -14,6 +14,8 @@ export class TableComponent implements OnInit {
   projects: Project[] = [];
   displayProjects: Project[] = [];
 
+  projectCount = this.projects.length;
+
   project: Project = {
     id: 1,
     projectName: "TPS Reports",
@@ -23,19 +25,28 @@ export class TableComponent implements OnInit {
     modifiedDate: "2017-12-16 22:59:13"
   };
 
+ 
   getProjects(): void {
     this.projectService.getProjects()
       .subscribe(projects => {
         this.projects = projects;
         this.displayProjects = projects;
+        this.projectCount = this.projects.length;
+        console.log('project count' + this.projects.length);
       });
   }
   
   filter(overallStatus:any) {
     this.displayProjects = this.projects.filter(projects => projects.overallStatus === overallStatus );
-    console.log(overallStatus);
-    console.log(this.projects);
   };
+
+  getCount(overallStatus:string) {
+    return this.projects.filter(list => list.overallStatus === overallStatus).length;
+  }
+
+  showAll() {
+    this.getProjects();
+  }
 
   constructor(private projectService: ProjectService) { }
 
