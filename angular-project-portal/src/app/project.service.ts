@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Project, ProjectWrapper } from './project';
-//import { PROJECTS } from './mock-projects';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -23,13 +22,11 @@ export class ProjectService {
   
 
   getProjects(): Observable<Project[]> {
-
     return this.http.get<ProjectWrapper>(this.projectsUrl)
       .pipe(
           map(projectWrapper => projectWrapper.projects),
         catchError(this.handleError<Project[]>('getProjects', []))
       );
-      
   }
   
   constructor(private http: HttpClient) { }

@@ -13,15 +13,41 @@
   <div class="side">
     <nav class="side-nav">
       <ul class="side-nav-items">
-        <li>All Projects</li>
-        <li>Red Projects</li>
-        <li>Yellow Projects</li>
-        <li>Green Projects</li>
-        <li>Create Project</li>
-        <li>Admin</li>
+        <li>
+          <a routerLink="/:overallStatus">
+            All Projects
+          </a>
+        </li>
+        <li>
+          <a routerLink="/">
+            Red Projects
+          </a>
+        </li>
+        <li>
+          <a>
+            Yellow Projects
+          </a>
+        </li>
+        <li>
+          <a>
+            Green Projects
+          </a>
+        </li>
+        <li>
+          <a>
+            Create Project
+          </a>
+        </li>
+        <li>
+          <a>
+            Admin
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
 
-  <app-table></app-table>
+  <!-- <app-table></app-table> -->
 </div>
+
+<router-outlet></router-outlet>

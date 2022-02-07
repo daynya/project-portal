@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../project';
-//import { PROJECTS } from '../mock-projects';
 import { ProjectService } from '../project.service';
+import { Router, ActivatedRoute, ParamMap, RouterPreloader } from '@angular/router';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -25,14 +26,25 @@ export class TableComponent implements OnInit {
     modifiedDate: "2017-12-16 22:59:13"
   };
 
+  overallStatus: any;
  
+/*   getProjects(): void {
+    combineLatest(this.projectService.getProjects(), this.route.queryParams)
+      .subscribe(([projects, routeParams]) => {
+        this.projects = projects;
+        this.displayProjects = projects;
+        this.projectCount = this.projects.length;
+        //this.filter(routeParams['overallStatus']);
+        console.log(routeParams);
+      });
+  } */
+
   getProjects(): void {
     this.projectService.getProjects()
       .subscribe(projects => {
         this.projects = projects;
         this.displayProjects = projects;
         this.projectCount = this.projects.length;
-        console.log('project count' + this.projects.length);
       });
   }
   
@@ -48,10 +60,15 @@ export class TableComponent implements OnInit {
     this.getProjects();
   }
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getProjects();
+    this.route.params.subscribe(routeParams => {
+      this.filter(routeParams['overallStatus']);
+      console.log(routeParams);
+    });
   }
 
 }
+
