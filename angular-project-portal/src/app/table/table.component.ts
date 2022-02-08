@@ -49,7 +49,10 @@ export class TableComponent implements OnInit {
   }
   
   filter(overallStatus:any) {
-    this.displayProjects = this.projects.filter(projects => projects.overallStatus === overallStatus );
+    if (overallStatus === '') {
+      this.getProjects();
+    }
+    this.displayProjects = this.projects.filter(projects => projects.overallStatus === overallStatus);
   };
 
   getCount(overallStatus:string) {
@@ -66,7 +69,6 @@ export class TableComponent implements OnInit {
     this.getProjects();
     this.route.params.subscribe(routeParams => {
       this.filter(routeParams['overallStatus']);
-      console.log(routeParams);
     });
   }
 
