@@ -1,5 +1,5 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+:host {
+    width: 100vw;
 }
 
 .main {
@@ -55,6 +55,7 @@ li {
 }
 
 .side-nav {
+    height: 100%;
     padding: 10px 0;
     width: 200px;
 }
@@ -66,4 +67,13 @@ li {
 .side-nav-items li {
     margin-top: 50px;
 
+}
+
+.side-nav-items a {
+    color: white;
+    text-decoration: none;
+}
+
+.side-nav-items a:visited {
+    color: white;
 }
