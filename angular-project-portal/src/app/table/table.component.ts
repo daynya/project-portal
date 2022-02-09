@@ -45,14 +45,17 @@ export class TableComponent implements OnInit {
         this.projects = projects;
         this.displayProjects = projects;
         this.projectCount = this.projects.length;
+        this.overallStatus = 'all';
       });
   }
   
-  filter(overallStatus:any) {
-    if (overallStatus === '') {
-      this.getProjects();
+  filterProjects(overallStatus:any) {
+    if (overallStatus === 'all') {
+      this.displayProjects = this.projects;
+
+    } else if (overallStatus === 'R' || overallStatus === 'Y' || overallStatus === 'G') {
+      this.displayProjects = this.projects.filter(projects => projects.overallStatus === overallStatus);
     }
-    this.displayProjects = this.projects.filter(projects => projects.overallStatus === overallStatus);
   };
 
   getCount(overallStatus:string) {
@@ -68,7 +71,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.getProjects();
     this.route.params.subscribe(routeParams => {
-      this.filter(routeParams['overallStatus']);
+      this.filterProjects(routeParams['overallStatus']);
     });
   }
 
