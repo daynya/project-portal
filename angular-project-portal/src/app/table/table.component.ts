@@ -28,17 +28,6 @@ export class TableComponent implements OnInit {
 
   overallStatus: any;
  
-/*   getProjects(): void {
-    combineLatest(this.projectService.getProjects(), this.route.queryParams)
-      .subscribe(([projects, routeParams]) => {
-        this.projects = projects;
-        this.displayProjects = projects;
-        this.projectCount = this.projects.length;
-        //this.filter(routeParams['overallStatus']);
-        console.log(routeParams);
-      });
-  } */
-
   getProjects(): void {
     this.projectService.getProjects()
       .subscribe(projects => {
