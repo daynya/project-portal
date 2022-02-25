@@ -77,3 +77,7 @@ li {
 .side-nav-items a:visited {
     color: white;
 }
+
+.fa-solid {
+    margin-right: 5px;
+}

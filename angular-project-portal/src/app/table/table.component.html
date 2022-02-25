@@ -1,30 +1,42 @@
 <div class="btn-wrapper">
     <button 
-        class="all-btn" 
+        class="project-btn all-btn" 
         [routerLink]="['/table/', 'all']">
-        <p class="number">{{projectCount}}</p>
-        <p class="title">All Projects</p>
+        <i class="fa-solid fa-folder-open"></i>
+        <div class="title-wrapper">
+            <p class="number">{{projectCount}}</p>
+            <p class="title">All Projects</p>
+        </div>
     </button>
 
     <button 
-        class="red-btn" 
+        class="project-btn red-btn" 
         [routerLink]="['/table', 'R']">
-        <p class="number">{{getCount('R')}}</p>
-        <p class="title">Red Projects</p>
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div class="title-wrapper">
+            <p class="number">{{getCount('R')}}</p>
+            <p class="title">Red Projects</p>
+        </div>
     </button>
 
     <button 
-        class="yellow-btn" 
+        class="project-btn yellow-btn" 
         [routerLink]="['/table', 'Y']">
-        <p class="number">{{getCount('Y')}}</p>
-        <p class="title">Yellow Projects</p>
+        <i class="fa-solid fa-circle-info"></i>
+        <div class="title-wrapper">
+            <p class="number">{{getCount('Y')}}</p>
+            <p class="title">Yellow Projects</p>
+        </div>
     </button>
 
     <button 
-        class="green-btn"
+        class="project-btn green-btn"
         [routerLink]="['/table', 'G']">
-        <p class="number">{{getCount('G')}}</p>
-        <p class="title">Green Projects</p>
+        <i class="fa-solid fa-thumbs-up"></i>
+        <div class="title-wrapper">
+            <p class="number">{{getCount('G')}}</p>
+            <p class="title">Green Projects</p>
+        </div>
     </button>
 </div>
 
